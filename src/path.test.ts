@@ -1,6 +1,7 @@
 import { describe, it, expect } from '@jest/globals';
 import {
   isInDir,
+  join,
   pathDir,
   pathExtension,
   pathFsName,
@@ -87,6 +88,31 @@ describe('path', () => {
     for (const example of EXAMPLES) {
       it(JSON.stringify(example), () => {
         const actual = isInDir(example.input.rootDir, example.input.fsPath);
+        expect(actual).toEqual(example.expected);
+      });
+    }
+  });
+
+  describe('join()', () => {
+    interface Example {
+      readonly input: readonly string[];
+      readonly expected: string;
+    }
+
+    const EXAMPLES: readonly Example[] = [
+      {
+        input: [''],
+        expected: '',
+      },
+      {
+        input: ['a', 'b'],
+        expected: 'a/b',
+      },
+    ];
+
+    for (const example of EXAMPLES) {
+      it(JSON.stringify(example), () => {
+        const actual = join(...example.input);
         expect(actual).toEqual(example.expected);
       });
     }
