@@ -4,16 +4,18 @@ All notable changes to the "path" will be documented in this file.
 
 ## [Unreleased]
 
-## [0.0.2] - 2023-08-13
+## [0.0.2] - 2023-08-16
 
 ### Changed
 
 - Update dependencies.
 - Update publishing process.
+- Use `@gmjs/jest-config` for testing.
 
 ### Added
 
 - Add `join()` function which is platform agnostic (always uses `/` as separator).
+- Add `slash()` function which converts path separators to `/`.
 
 ## [0.0.1] - 2023-05-07
 

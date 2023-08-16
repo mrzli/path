@@ -102,11 +102,15 @@ describe('path', () => {
     const EXAMPLES: readonly Example[] = [
       {
         input: [''],
-        expected: '',
+        expected: '.',
       },
       {
         input: ['a', 'b'],
         expected: 'a/b',
+      },
+      {
+        input: ['a/b', 'c'],
+        expected: 'a/b/c',
       },
     ];
 

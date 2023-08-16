@@ -1,5 +1,4 @@
 import { isAbsolute, join as nodeJoin, parse, relative } from 'node:path';
-import slash from 'slash';
 
 export function isInDir(rootDir: string, fsPath: string): boolean {
   const relativePath = relative(rootDir, fsPath);
@@ -32,10 +31,14 @@ export function pathFsNameWithExtension(fullPath: string): string {
 
 export function pathWithoutExtension(fullPath: string): string {
   const pathInfo = parse(fullPath);
-  return nodeJoin(pathInfo.dir, pathInfo.name);
+  return join(pathInfo.dir, pathInfo.name);
 }
 
 export function pathExtension(fullPath: string): string {
   const pathInfo = parse(fullPath);
   return pathInfo.ext.replaceAll(/^\.+|\.+$/g, '');
+}
+
+export function slash(path: string): string {
+  return path.replaceAll('\\', '/');
 }

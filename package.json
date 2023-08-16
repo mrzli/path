@@ -27,11 +27,11 @@
     "pub": "npm run build && npm run pub-only"
   },
   "dependencies": {
-    "slash": "^5.1.0",
     "tslib": "^2.6.1"
   },
   "devDependencies": {
     "@gmjs/eslint-config": "^0.0.18",
+    "@gmjs/jest-config": "^0.0.3",
     "@gmjs/npm-publish-cli": "^0.0.4",
     "@gmjs/prettier-config": "^1.0.2",
     "@gmjs/tsconfig": "^1.0.0",
